@@ -35,7 +35,6 @@
     <script src="serviceWorker.js"></script>
     <script src="./xterm/xterm.js"></script>
     <script src="./xterm/xterm-addon-fit.js"></script>
-    <script src="network.js"></script>
   </head>
 
   <body style="margin:0;height:100%;background:black;color:white;overflow:hidden; display:flex; flex-direction: column; justify-content: space-between; height: 100%;">
@@ -191,11 +190,8 @@
 			return;
 		}
 
-		let networkInterface = setupNetworkInterface();
-
 		async function runTest(cx)
 		{
-			registerNetworkLogin(cx, networkInterface);
 
 			term.scrollToBottom();
 
@@ -243,7 +239,7 @@
 				h.textContent = "\u{1F7E0}";
 		}
 		// The device url and type are replaced by Github Actions.
-		CheerpXApp.create({devices:[{type:DEVICE_TYPE,url:IMAGE_URL,name:"block1"}],mounts:[{type:"ext2",dev:"block1",path:"/"},{type:"cheerpOS",dev:"/app",path:"/app"},{type:"cheerpOS",dev:"/str",path:"/data"},{type:"devs",dev:"",path:"/dev"}], networkInterface: networkInterface, activityInterface: {cpu: cpuCallback, dev: devCallback}}).then(runTest, failCallback);
+		CheerpXApp.create({devices:[{type:DEVICE_TYPE,url:IMAGE_URL,name:"block1"}],mounts:[{type:"ext2",dev:"block1",path:"/"},{type:"cheerpOS",dev:"/app",path:"/app"},{type:"cheerpOS",dev:"/str",path:"/data"},{type:"devs",dev:"",path:"/dev"}], activityInterface: {cpu: cpuCallback, dev: devCallback}}).then(runTest, failCallback);
 	}
 	function initialMessage()
 	{
