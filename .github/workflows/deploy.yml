@@ -165,7 +165,7 @@ jobs:
       # Result is an ext2 image for webvm.
 
       # Move required files for gh-pages deployment to the deployment directory $DEPLOY_DIR.
-      - run: sudo mv examples xterm index.html network.js scrollbar.css serviceWorker.js $DEPLOY_DIR
+      - run: sudo mv examples xterm index.html scrollbar.css serviceWorker.js $DEPLOY_DIR
       
       # The .txt suffix enabled HTTP compression for free
       - name: Generate image split chunks and .meta file
