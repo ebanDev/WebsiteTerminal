@@ -3,7 +3,7 @@ RUN addgroup -S eban && \
     adduser --disabled-password --gecos "" --ingroup eban eban
 RUN apk add --no-cache busybox-suid
 RUN echo 'root:WowThisIsASecretPassword' | chpasswd
+RUN echo $RANDOM | md5sum | head -c 20 > /root/flag.txt
 WORKDIR /home/eban
-USER eban
 COPY --chown=eban:eban ./examples/hello.txt /home/eban
-COPY --chown=root:root ./examples/flag.txt /root/flag.txt
+USER eban
