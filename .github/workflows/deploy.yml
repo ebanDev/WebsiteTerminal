@@ -11,13 +11,13 @@ on:
         type: string
         description: 'Path to the Dockerfile'
         required: true
-        default: 'dockerfiles/debian_mini'
+        default: 'dockerfiles/alpine'
 
       IMAGE_SIZE:
         type: string
         description: 'Image size, 950M max'
         required: true
-        default: '600M'
+        default: '10M'
 
       DEPLOY_TO_GITHUB_PAGES:
         type: boolean

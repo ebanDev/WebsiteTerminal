@@ -1,0 +1,3 @@
+Hi there ! :) Looks like you found a secret path
+
+Can you find the secret flag?
